@@ -1,0 +1,20 @@
+PLAATSHOUDER — VERVANG paul.jpg DOOR DE ECHTE FOTO VAN PAUL
+============================================================
+
+De huidige public/paul.jpg is een tijdelijke plaatshouder-afbeelding.
+
+Wat moet je doen:
+1. Maak of kies een vierkante foto van Paul (bijv. 600x600 px of groter).
+2. Sla die op als JPG en noem het bestand exact:  paul.jpg
+3. Plaats het in deze map (public/) en overschrijf de bestaande paul.jpg.
+4. Dit bestand (paul.jpg.placeholder) mag je daarna verwijderen.
+
+De foto wordt op twee plaatsen getoond:
+- Hero-sectie: rond portret van 260x260 px (object-cover).
+- Booking-sectie: kleine ronde avatar van 80x80 px met groene online-dot.
+
+Tip: gebruik een goed uitgelichte, frontale foto zodat het gezicht
+mooi gecentreerd in de cirkel valt.
+
+Voor de social-share preview kun je ook public/og.png vervangen
+(aanbevolen formaat 1200x630 px).
