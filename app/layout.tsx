@@ -10,6 +10,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+  // Basis-URL voor absolute links (o.a. de og:image voor social sharing).
+  // Pas dit aan als het definitieve domein anders blijkt te zijn.
+  metadataBase: new URL("https://uwenergiemanager.be"),
   title: "Paul · Energiemanager voor zonnepaneeleigenaren · Sun4Power",
   description:
     "Burgerlijk ingenieur Paul helpt al 700+ huishoudens besparen met de Energiemanager. Boek vrijblijvend advies.",

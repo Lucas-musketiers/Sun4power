@@ -1,0 +1,6 @@
+# Serveer de statische Next.js-export als website
+# Forceer index.html als startpagina (vóór een eventuele index.php placeholder)
+DirectoryIndex index.html index.php
+
+# Nette 404-pagina uit de export
+ErrorDocument 404 /404.html

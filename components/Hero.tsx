@@ -77,7 +77,7 @@ export default function Hero() {
             initial="hidden"
             animate="show"
             className="font-bold leading-[1.05] tracking-tight text-ink"
-            style={{ fontSize: "clamp(48px, 8vw, 80px)" }}
+            style={{ fontSize: "clamp(40px, 11vw, 80px)" }}
           >
             Energiefanaat
             <br />
