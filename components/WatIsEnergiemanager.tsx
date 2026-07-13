@@ -204,6 +204,8 @@ export default function WatIsEnergiemanager() {
                     type="button"
                     onClick={() => setOpen(isOpen ? -1 : i)}
                     aria-expanded={isOpen}
+                    data-umami-event="Uitleg open"
+                    data-umami-event-vraag={item.title}
                     className="flex w-full items-center gap-4 py-5 text-left"
                   >
                     <span className="text-sm font-bold text-sunset">{item.n}</span>

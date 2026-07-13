@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Analytics from "@/components/Analytics";
+import ScrollDepth from "@/components/ScrollDepth";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({
         </a>
         {children}
         <Analytics />
+        <ScrollDepth />
       </body>
     </html>
   );
