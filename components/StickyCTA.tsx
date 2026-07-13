@@ -26,6 +26,7 @@ export default function StickyCTA() {
           href={BOOKING_URL}
           target="_blank"
           rel="noopener noreferrer"
+          data-umami-event="Sticky CTA - Boek met Paul"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 16 }}

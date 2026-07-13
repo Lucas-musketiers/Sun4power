@@ -89,6 +89,7 @@ export default function Booking() {
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
+            data-umami-event="Booking - Plan adviesgesprek"
             className="mt-8 flex w-full items-center justify-center gap-2 rounded-full bg-sunset px-7 py-4 text-lg font-semibold text-navy-900 shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:bg-sunset-deep hover:shadow-cta-hover"
           >
             Plan mijn gratis adviesgesprek →

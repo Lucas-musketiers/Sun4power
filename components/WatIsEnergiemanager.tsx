@@ -241,6 +241,7 @@ export default function WatIsEnergiemanager() {
             {/* Afsluitende vraag → booking */}
             <a
               href="#boek"
+              data-umami-event="Uitleg - Bespreek met Paul"
               className="mt-2 flex items-center gap-2 pt-6 font-semibold text-sunset transition-colors hover:text-solar"
             >
               Welke grote verbruikers heb jij (of plan je)? Bespreek het met Paul

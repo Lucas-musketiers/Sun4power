@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -57,6 +58,7 @@ export default function RootLayout({
           Naar hoofdinhoud
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );

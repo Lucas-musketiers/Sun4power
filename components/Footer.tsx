@@ -17,6 +17,7 @@ export default function Footer() {
           © 2026 Sun4Power ·{" "}
           <a
             href="mailto:paul@sun4power.be"
+            data-umami-event="Footer - e-mail"
             className="transition-colors hover:text-ink"
           >
             paul@sun4power.be

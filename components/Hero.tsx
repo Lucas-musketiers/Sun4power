@@ -108,6 +108,7 @@ export default function Hero() {
             <button
               type="button"
               onClick={scrollToBooking}
+              data-umami-event="Hero CTA - naar booking"
               className="inline-flex items-center gap-2 rounded-full bg-sunset px-7 py-4 font-semibold text-navy-900 shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:bg-sunset-deep hover:shadow-cta-hover"
             >
               Boek vrijblijvend advies met Paul ↓

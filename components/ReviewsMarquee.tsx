@@ -67,6 +67,8 @@ function ReviewCard({
     <button
       type="button"
       onClick={onOpen}
+      data-umami-event="Review geopend"
+      data-umami-event-naam={`${review.name}, ${review.city}`}
       className="flex h-full w-[300px] shrink-0 flex-col rounded-2xl border border-navy-700 bg-navy-900 p-6 text-left transition-all duration-300 hover:-translate-y-1 hover:border-sunset sm:w-[340px]"
     >
       <Quote className="mb-4 h-8 w-8 text-sunset" strokeWidth={2.5} aria-hidden="true" />

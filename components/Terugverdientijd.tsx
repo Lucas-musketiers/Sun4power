@@ -132,6 +132,7 @@ export default function Terugverdientijd() {
             type="button"
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
+            data-umami-event="Terugverdientijd - Meer info"
             className="inline-flex items-center gap-2 rounded-full border border-sunset px-6 py-3 font-semibold text-sunset transition-colors duration-200 hover:bg-sunset hover:text-navy-900"
           >
             {open ? "Minder info" : "Meer info"}
