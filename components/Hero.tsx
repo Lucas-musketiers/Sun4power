@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import CursorGlow from "./CursorGlow";
-import CountUp from "./CountUp";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -76,12 +75,12 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="font-bold leading-[1.05] tracking-tight text-ink"
-            style={{ fontSize: "clamp(40px, 11vw, 80px)" }}
+            className="font-bold leading-[1.08] tracking-tight text-ink"
+            style={{ fontSize: "clamp(32px, 7vw, 58px)" }}
           >
-            Energiefanaat
+            Hoi, ik ben Paul.
             <br />
-            in hart en nieren.
+            <span className="text-solar">Samen kijken we hoeveel jij bespaart.</span>
           </motion.h1>
 
           <motion.p
@@ -91,11 +90,8 @@ export default function Hero() {
             animate="show"
             className="mt-6 max-w-[520px] text-lg leading-relaxed text-ink"
           >
-            Nadat ik mijn opleiding burgerlijk ingenieur afrondde, ben ik
-            gepassioneerd geraakt door energieoptimalisatie. Met Sun4Power hebben
-            we zo al{" "}
-            <CountUp end={700} className="font-bold text-solar" /> huishoudens
-            kunnen helpen besparen.
+            Ontdek in 15 minuten vrijblijvend of jouw dak geschikt is. Geen
+            verplichtingen, gewoon eerlijk advies.
           </motion.p>
 
           <motion.div
@@ -111,7 +107,7 @@ export default function Hero() {
               data-umami-event="Hero CTA - naar booking"
               className="inline-flex items-center gap-2 rounded-full bg-sunset px-7 py-4 font-semibold text-navy-900 shadow-cta transition-all duration-200 hover:-translate-y-0.5 hover:bg-sunset-deep hover:shadow-cta-hover"
             >
-              Boek vrijblijvend advies met Paul ↓
+              Plan een gratis adviesgesprek met Paul ↓
             </button>
           </motion.div>
         </div>

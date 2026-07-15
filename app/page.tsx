@@ -5,24 +5,20 @@ import StickyCTA from "@/components/StickyCTA";
 import Footer from "@/components/Footer";
 
 // Lazy load van de secties onder de vouw (Core Web Vitals).
-const WatIsEnergiemanager = dynamic(
-  () => import("@/components/WatIsEnergiemanager"),
-  { loading: () => <div className="min-h-[60vh] bg-navy-800" /> }
-);
+const Terugverdientijd = dynamic(() => import("@/components/Terugverdientijd"), {
+  loading: () => <div className="min-h-[60vh] bg-navy-800" />,
+});
+const Booking = dynamic(() => import("@/components/Booking"), {
+  loading: () => <div className="min-h-[60vh] bg-navy-900" />,
+});
 const LiveEnergy = dynamic(() => import("@/components/LiveEnergy"), {
   loading: () => <div className="min-h-[50vh] bg-navy-900" />,
 });
 const ReviewsMarquee = dynamic(() => import("@/components/ReviewsMarquee"), {
   loading: () => <div className="min-h-[40vh] bg-navy-900" />,
 });
-const Terugverdientijd = dynamic(() => import("@/components/Terugverdientijd"), {
+const Faq = dynamic(() => import("@/components/Faq"), {
   loading: () => <div className="min-h-[60vh] bg-navy-800" />,
-});
-const Mission = dynamic(() => import("@/components/Mission"), {
-  loading: () => <div className="min-h-[50vh] bg-navy-900" />,
-});
-const Booking = dynamic(() => import("@/components/Booking"), {
-  loading: () => <div className="min-h-[60vh] bg-navy-900" />,
 });
 
 export default function Home() {
@@ -30,19 +26,17 @@ export default function Home() {
     <>
       <ScrollProgress />
       <main id="main">
-        {/* 1. Persoonlijk verhaal */}
+        {/* 1. Persoonlijk verhaal + waarde-belofte (Gemini: binnen 10 sec) */}
         <Hero />
-        {/* 2. Wat is een Energiemanager? (reel + uitleg) */}
-        <WatIsEnergiemanager />
-        {/* 3. Live energiestroom + auto-scrollende reviews */}
+        {/* 2. Terugverdientijd */}
+        <Terugverdientijd />
+        {/* 3. Booking */}
+        <Booking />
+        {/* 4. Live energiestroom + auto-scrollende reviews */}
         <LiveEnergy />
         <ReviewsMarquee />
-        {/* 4. Terugverdientijd */}
-        <Terugverdientijd />
-        {/* 5. Missie */}
-        <Mission />
-        {/* 6. Booking */}
-        <Booking />
+        {/* 5. Meest gestelde vragen */}
+        <Faq />
       </main>
       <Footer />
       <StickyCTA />

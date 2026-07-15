@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, ArrowRight } from "lucide-react";
@@ -132,12 +131,12 @@ const fadeUp = {
   }),
 };
 
-export default function WatIsEnergiemanager() {
+export default function Faq() {
   const [open, setOpen] = useState(0);
 
   return (
     <section className="bg-navy-800 py-24">
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-3xl px-6">
         <motion.p
           custom={0}
           variants={fadeUp}
@@ -146,7 +145,7 @@ export default function WatIsEnergiemanager() {
           viewport={{ once: true, margin: "-80px" }}
           className="eyebrow text-sunset"
         >
-          Wat is een Energiemanager?
+          FAQ
         </motion.p>
 
         <motion.h2
@@ -155,101 +154,73 @@ export default function WatIsEnergiemanager() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
-          className="mt-4 max-w-2xl text-4xl font-bold leading-tight text-ink sm:text-5xl"
+          className="mt-4 text-4xl font-bold leading-tight text-ink sm:text-5xl"
         >
-          Het slimme brein achter jouw energie.
+          De meest gestelde vragen
         </motion.h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-14">
-          {/* Reel-foto (sticky op desktop) */}
-          <motion.figure
-            custom={2}
-            variants={fadeUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, margin: "-60px" }}
-            className="mx-auto w-full max-w-[300px] lg:sticky lg:top-24 lg:mx-0"
-          >
-            <div
-              className="relative aspect-[9/16] overflow-hidden rounded-[24px] border-2 border-sunset"
-              style={{ boxShadow: "0 20px 60px -20px rgba(255,140,66,0.5)" }}
-            >
-              <Image
-                src="/reel-besparing.jpg"
-                alt="Paul toont een klant hoeveel hij bespaart met de Energiemanager"
-                fill
-                sizes="300px"
-                className="object-cover"
-              />
-            </div>
-            <figcaption className="mt-4 text-center text-sm text-muted">
-              Paul in beeld · besparing €500–€2000 per jaar
-            </figcaption>
-          </motion.figure>
-
-          {/* Accordeon met de uitleg */}
-          <div className="divide-y divide-navy-700">
-            {items.map((item, i) => {
-              const isOpen = open === i;
-              return (
-                <motion.div
-                  key={item.n}
-                  custom={i}
-                  variants={fadeUp}
-                  initial="hidden"
-                  whileInView="show"
-                  viewport={{ once: true, margin: "-40px" }}
+        {/* Accordeon met de uitleg (zonder foto) */}
+        <div className="mt-10 divide-y divide-navy-700">
+          {items.map((item, i) => {
+            const isOpen = open === i;
+            return (
+              <motion.div
+                key={item.n}
+                custom={i}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, margin: "-40px" }}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpen(isOpen ? -1 : i)}
+                  aria-expanded={isOpen}
+                  data-umami-event="Uitleg open"
+                  data-umami-event-vraag={item.title}
+                  className="flex w-full items-center gap-4 py-5 text-left"
                 >
-                  <button
-                    type="button"
-                    onClick={() => setOpen(isOpen ? -1 : i)}
-                    aria-expanded={isOpen}
-                    data-umami-event="Uitleg open"
-                    data-umami-event-vraag={item.title}
-                    className="flex w-full items-center gap-4 py-5 text-left"
+                  <span className="text-sm font-bold text-sunset">{item.n}</span>
+                  <span className="flex-1 text-lg font-semibold text-ink sm:text-xl">
+                    {item.title}
+                  </span>
+                  <span
+                    className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border border-navy-700 text-sunset transition-transform duration-300 ${
+                      isOpen ? "rotate-45 bg-sunset/10" : ""
+                    }`}
                   >
-                    <span className="text-sm font-bold text-sunset">{item.n}</span>
-                    <span className="flex-1 text-lg font-semibold text-ink sm:text-xl">
-                      {item.title}
-                    </span>
-                    <span
-                      className={`grid h-8 w-8 shrink-0 place-items-center rounded-full border border-navy-700 text-sunset transition-transform duration-300 ${
-                        isOpen ? "rotate-45 bg-sunset/10" : ""
-                      }`}
+                    <Plus className="h-4 w-4" />
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
                     >
-                      <Plus className="h-4 w-4" />
-                    </span>
-                  </button>
+                      <div className="space-y-3 pb-6 pl-8 pr-2 text-[15px] leading-relaxed text-muted">
+                        {item.body}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
 
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                        className="overflow-hidden"
-                      >
-                        <div className="space-y-3 pb-6 pl-8 pr-2 text-[15px] leading-relaxed text-muted">
-                          {item.body}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              );
-            })}
-
-            {/* Afsluitende vraag → booking */}
-            <a
-              href="#boek"
-              data-umami-event="Uitleg - Bespreek met Paul"
-              className="mt-2 flex items-center gap-2 pt-6 font-semibold text-sunset transition-colors hover:text-solar"
-            >
-              Welke grote verbruikers heb jij (of plan je)? Bespreek het met Paul
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </div>
+          {/* Afsluitende vraag → booking */}
+          <a
+            href="#boek"
+            data-umami-event="Uitleg - Bespreek met Paul"
+            className="mt-2 flex items-center gap-2 pt-6 font-semibold text-sunset transition-colors hover:text-solar"
+          >
+            Welke grote verbruikers heb jij (of plan je)? Bespreek het met Paul
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </section>
